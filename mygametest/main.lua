@@ -1,11 +1,16 @@
 function love.load()
-  number = 0
+
 end
 
 function love.update(dt)
-  number = number + 1
+
 end
 
 function love.draw()
-  love.graphics.print(number)
+  love.graphics.setColor(213/255, 144/255, 226/255)
+  love.graphics.circle("fill", 200, 200, 100)
+
+  love.graphics.setColor(111/255, 142/255, 241/255)
+  love.graphics.rectangle("fill", 200, 200, 200, 100)
+
 end
