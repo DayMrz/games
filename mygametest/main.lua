@@ -8,6 +8,8 @@ function love.load()
   timer = 0
 
   gameFont = love.graphics.newFont(50)
+
+  circleColor = {111/255, 142/255, 241/255}
 end
 
 function love.update(dt)
@@ -15,7 +17,7 @@ function love.update(dt)
 end
 
 function love.draw()
-  love.graphics.setColor(111/255, 142/255, 241/255)
+  love.graphics.setColor(circleColor)
   love.graphics.circle("fill", target.x, target.y, target.radius)
   
   love.graphics.setColor(1, 1, 1)
@@ -27,7 +29,10 @@ function love.mousepressed( x, y, button, istouch, presses )
   if button == 1 then
     local mouseToTarget = distanceBetween(x, y, target.x, target.y)
     if mouseToTarget < target.radius then
-      score = score +1
+      score = score + 1
+      target.x = math.random(target.radius, love.graphics.getWidth() - target.radius)
+      target.y = math.random(target.radius, love.graphics.getHeight() - target.radius)
+      circleColor = {0.5+0.5*math.random(), 0.5+0.5*math.random(), 0.5+0.5*math.random()}
     end
   end
 end
