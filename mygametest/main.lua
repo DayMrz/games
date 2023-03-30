@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, lowercase-global, duplicate-set-field
 function love.load()
   target = {}
   target.x = 300
@@ -10,10 +11,6 @@ function love.load()
   gameFont = love.graphics.newFont(50)
 
   circleColor = {111/255, 142/255, 241/255}
-end
-
-function love.update(dt)
-
 end
 
 function love.draw()
