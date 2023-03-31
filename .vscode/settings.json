@@ -2,6 +2,9 @@
   "Lua.diagnostics.globals": [
     "score",
     "love",
-    "self"
+    "self",
+    "Class",
+    "class_commons",
+    "common"
   ]
 }
