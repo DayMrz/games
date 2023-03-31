@@ -1,4 +1,3 @@
----@diagnostic disable: lowercase-global, duplicate-set-field
 push = require 'push'
 Class = require 'class'
 require 'Paddle'
@@ -13,6 +12,7 @@ VIRTUAL_HEIGHT = 243
 PADDLE_SPEED = 200
 
 function love.load()
+
   love.graphics.setDefaultFilter('nearest', 'nearest')
 
   math.randomseed(os.time())
@@ -30,9 +30,10 @@ function love.load()
   player1 = Paddle(10, 30, 5, 20)
   player2 = Paddle(VIRTUAL_WIDTH - 10, VIRTUAL_HEIGHT - 30, 5, 20)
 
-  ball = Ball(VIRTUAL_WIDTH / 2 -2, VIRTUAL_HEIGHT / 2 - 2)
+  ball = Ball(VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2)
 
   gameState = 'start'
+
 end
 
 function love.update(dt)

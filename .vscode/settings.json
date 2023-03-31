@@ -5,6 +5,14 @@
     "self",
     "Class",
     "class_commons",
-    "common"
+    "common",
+    "smallFont",
+    "player1",
+    "player2",
+    "ball",
+    "gameState"
+  ],
+  "Lua.diagnostics.disable": [
+    "duplicate-set-field"
   ]
 }
