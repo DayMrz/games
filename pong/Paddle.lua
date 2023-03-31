@@ -14,3 +14,7 @@ function Paddle.update(dt)
   else self.y = math.min(VIRTUAL_HEIGHT - self.height, self.y + self.dy *dt)
   end
 end
+
+function Paddle:render()
+  love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
+end
