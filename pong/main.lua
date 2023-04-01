@@ -39,23 +39,6 @@ function love.load()
 end
 
 function love.update(dt)
-
-  if love.keyboard.isDown('w') then
-    player1.dy = -PADDLE_SPEED
-  elseif love.keyboard.isDown('s') then
-    player1.dy = PADDLE_SPEED
-  else
-    player1.dy = 0
-  end
-
-  if love.keyboard.isDown('up') then
-    player2.dy = -PADDLE_SPEED
-  elseif love.keyboard.isDown('down') then
-    player2.dy = PADDLE_SPEED
-  else
-    player2.dy = 0
-  end
-
   if gameState == 'play' then
 
     if ball:collides(player1) then
@@ -80,16 +63,44 @@ function love.update(dt)
       end
     end
 
+    if ball.y <= 0 then
+      ball.y = 0
+      ball.dy = -ball.dy
+    end
+    
     -- -4 to account for the ball size
     if ball.y >= VIRTUAL_HEIGHT -4 then
       ball.y = VIRTUAL_HEIGHT -4
       ball.dy = -ball.dy
     end
+  end
+
+  --player1 movement
+  if love.keyboard.isDown('w') then
+    player1.dy = -PADDLE_SPEED
+  elseif love.keyboard.isDown('s') then
+    player1.dy = PADDLE_SPEED
+  else
+    player1.dy = 0
+  end
+
+  --player2 movement
+  if love.keyboard.isDown('up') then
+    player2.dy = -PADDLE_SPEED
+  elseif love.keyboard.isDown('down') then
+    player2.dy = PADDLE_SPEED
+  else
+    player2.dy = 0
+  end
+
+  if gameState == 'play' then
     ball:update(dt)
   end
 
   player1:update(dt)
   player2:update(dt)
+
+
 end
 
 function love.keypressed(key)
