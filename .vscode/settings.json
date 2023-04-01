@@ -12,7 +12,12 @@
     "ball",
     "gameState",
     "displayFPS",
-    "paddle"
+    "paddle",
+    "servingPlayer",
+    "player2Score",
+    "player1Score",
+    "scoreFont",
+    "displayScore"
   ],
   "Lua.diagnostics.disable": [
     "duplicate-set-field"
