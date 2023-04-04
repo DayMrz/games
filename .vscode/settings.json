@@ -23,5 +23,8 @@
   ],
   "Lua.diagnostics.disable": [
     "duplicate-set-field"
+  ],
+  "cSpell.words": [
+    "tostring"
   ]
 }
